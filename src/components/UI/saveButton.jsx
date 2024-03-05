@@ -5,9 +5,9 @@ import AppColors from '../../theme/colors';
 
 // create a component
 const SaveButton = props => {
-  const {title} = props;
+  const {title, style} = props;
   return (
-    <TouchableOpacity {...props} style={styles.container}>
+    <TouchableOpacity {...props} style={style ? style : styles.container}>
       <Text style={styles.title}>{title}</Text>
     </TouchableOpacity>
   );
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingVertical: 15,
     borderRadius: 5,
+    flex: 1,
   },
   title: {
     color: AppColors.WHITE,
