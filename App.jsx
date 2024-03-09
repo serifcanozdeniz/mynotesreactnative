@@ -1,12 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import RootNavigatoor from './src/router/rootNavigatoor';
+import Provider from './src/context/provider';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <RootNavigatoor />
-    </NavigationContainer>
+    <Provider>
+      <NavigationContainer>
+        <RootNavigatoor />
+      </NavigationContainer>
+    </Provider>
   );
 };
 

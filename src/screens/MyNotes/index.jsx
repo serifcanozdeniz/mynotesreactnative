@@ -13,7 +13,9 @@ const MyNotes = ({navigation}) => {
         <Header />
         <FlatList
           data={mockData}
-          renderItem={({item}) => <NoteCard item={item} />}
+          renderItem={({item}) => (
+            <NoteCard item={item} navigation={navigation} />
+          )}
           keyExtractor={item => item.id}
         />
         <FloatActionButton onPress={() => navigation.navigate(ADDNOTE)} />
