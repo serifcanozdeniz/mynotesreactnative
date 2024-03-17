@@ -28,23 +28,25 @@ const RootNavigatoor = () => {
       }}>
       <Stack.Screen
         options={{headerShown: true}}
-        name={USEEFFECTEXAMPLE}
-        component={UseEffectExample}
-      />
-      <Stack.Screen
-        options={{headerShown: true}}
         name={MYNOTES}
         component={MyNotes}
       />
       <Stack.Screen
         options={{headerShown: true}}
-        name={SECONDSCREEN}
-        component={SecondScreen}
-      />
-      <Stack.Screen
-        options={{headerShown: true}}
         name={STATEEXAMPLE}
         component={StateExample}
+      />
+
+      <Stack.Screen
+        options={{headerShown: true}}
+        name={USEEFFECTEXAMPLE}
+        component={UseEffectExample}
+      />
+
+      <Stack.Screen
+        options={{headerShown: true}}
+        name={SECONDSCREEN}
+        component={SecondScreen}
       />
 
       <Stack.Screen name={NOTEDETAIL} component={NoteDetail} />

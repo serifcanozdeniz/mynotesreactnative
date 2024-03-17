@@ -5,51 +5,55 @@ import AppColors from '../../theme/colors';
 import {
   TextBold,
   TextalignCenter,
-  TextalignJustifyright,
   TextalignJustifyleft,
-  TextItalic,
+  TextalignJustifyright,
   TextUnderline,
+  TextBlock,
 } from 'iconsax-react-native';
 
 // create a component
-const EditButtons = () => {
+const EditButtons = ({onChangeStyle}) => {
   const Buttons = [
     {
       id: 1,
-      name: 'bold',
+      value: 'bold',
       icon: <TextBold size="24" color={AppColors.SECONDARY} />,
     },
     {
       id: 2,
-      name: 'bold',
-      icon: <TextalignCenter size="24" color={AppColors.SECONDARY} />,
+      value: 'italic',
+      icon: <TextBlock size="24" color={AppColors.SECONDARY} />,
     },
     {
       id: 3,
-      name: 'bold',
-      icon: <TextalignJustifyright size="24" color={AppColors.SECONDARY} />,
+      value: 'textUnderline',
+      icon: <TextUnderline size="24" color={AppColors.SECONDARY} />,
     },
     {
       id: 4,
-      name: 'bold',
+      value: 'left',
       icon: <TextalignJustifyleft size="24" color={AppColors.SECONDARY} />,
     },
     {
       id: 5,
-      name: 'bold',
-      icon: <TextItalic size="24" color={AppColors.SECONDARY} />,
+      value: 'right',
+      icon: <TextalignJustifyright size="24" color={AppColors.SECONDARY} />,
     },
     {
       id: 6,
-      name: 'bold',
-      icon: <TextUnderline size="24" color={AppColors.SECONDARY} />,
+      value: 'center',
+      icon: <TextalignCenter size="24" color={AppColors.SECONDARY} />,
     },
   ];
 
   return (
     <View style={styles.container}>
       {Buttons.map((item, index) => (
-        <TouchableOpacity key={item.id}>{item.icon}</TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => onChangeStyle(item.value)}
+          key={item.id}>
+          {item.icon}
+        </TouchableOpacity>
       ))}
     </View>
   );
